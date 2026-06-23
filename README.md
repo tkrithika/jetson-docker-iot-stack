@@ -21,19 +21,28 @@ Spins up a complete IoT data pipeline with a single command, no extra hardware r
 | **Simulator** | Python script - publishes fake sensor data | -- |
 
 ## Architecture
-Simulator (Python)
 
-↓
-
-Mosquitto (MQTT Broker)
-
-↓
-
-InfluxDB (Time-Series DB)
-
-↓
-
-Grafana (Live Dashboard)
+```
+┌─────────────────────┐
+│   Simulator (Python)│
+│   simulate.py       │
+└──────────┬──────────┘
+           │ MQTT publish
+           ▼
+┌─────────────────────┐
+│  Mosquitto Broker   │
+└──────────┬──────────┘
+           │ subscribe
+           ▼
+┌─────────────────────┐
+│  InfluxDB 2.7       │
+└──────────┬──────────┘
+           │ query
+           ▼
+┌─────────────────────┐
+│  Grafana 10.4       │
+└─────────────────────┘
+```
 
 ## Prerequisites
 
@@ -133,6 +142,13 @@ jetson-docker-iot-stack/
 
 - [jetson-orin-nano-headless-vnc-setup](https://github.com/tkrithika/jetson-orin-nano-headless-vnc-setup)
 - [jetson-opencv-cuda-build-guide](https://github.com/tkrithika/jetson-opencv-cuda-build-guide)
+
+## Note
+
+This is the first version of an ongoing IoT edge computing project built on the NVIDIA Jetson Orin Nano.  
+The current stack uses a Python-based data simulator to demonstrate the full pipeline from data generation to live visualization without requiring any physical sensors.
+
+This foundation will be extended in future versions with real sensor hardware, moving from simulated data to actual real-world measurements flowing through the same pipeline.
 
 ## License
 
