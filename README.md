@@ -73,6 +73,8 @@ The dashboard auto-refreshes every 5 seconds and shows the last 30 minutes of da
 - **Humidity** (%) - half width chart
 - **Pressure** (hPa) - half width chart
 
+![Grafana IoT Dashboard](docs/grafana-dashboard.png)
+
 ## Simulator
 
 The included Python simulator publishes fake sensor readings every 5 seconds to MQTT and writes directly to InfluxDB:
