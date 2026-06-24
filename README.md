@@ -130,6 +130,7 @@ jetson-docker-iot-stack/
 │
 └── docs/
     └── grafana-dashboard.png
+    └── simulator-docs.png
 ```
 
 ## Tested On
