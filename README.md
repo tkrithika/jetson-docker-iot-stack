@@ -98,6 +98,8 @@ The included Python simulator publishes fake sensor readings every 5 seconds to 
 
 This lets the entire pipeline run and be tested without any physical sensors.
 
+![Simulator Logs running on Jetson](docs/simulator-logs.png)
+
 ## Roadmap
 
 - **v1.0** *(current)* - Full pipeline with Python data simulator
